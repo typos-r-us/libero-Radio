@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:libero_radio/screens/homeScreen.dart';
 
 void main() {
+  // make system status bar transparent
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(const MyApp());
 }
 
@@ -13,10 +18,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Libero Radio',
       theme: ThemeData(
+        fontFamily: GoogleFonts.poppins().fontFamily,
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: Container(),
+      home: HomeScreen(),
     );
   }
 }
